@@ -1,4 +1,4 @@
-# TI3V31 - Programación Back-End
+# TI3V31 - Programación Front-End
 Este repositorio fue dispuesto para el Curso de Programación Front-End. En el repositorio podrás encontrar: 
 
 - Ejemplos usados en clase
