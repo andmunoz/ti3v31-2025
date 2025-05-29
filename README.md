@@ -32,5 +32,4 @@ Recuerde que estas carpetas no se van a subir al repo mientras no tengan conteni
 ## Software Relevantes
 - [Visual Studio Code](https://code.visualstudio.com/download): IDE para trabajar durante el curso.
 - [Git SCM](https://git-scm.com/downloads): Herramientas básicas para usar Git localmente.
-- [Python](https://www.python.org/downloads/): Compilador base para el uso del lenguaje.
-- [PIP](https://pypi.org/project/pip/): Gestor de paquetes de Python.
+- [React](https://es.react.dev/): Biblioteca de Javascript para interfaces de usuario web y nativas. 
