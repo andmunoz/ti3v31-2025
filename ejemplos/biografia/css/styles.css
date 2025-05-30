@@ -1,0 +1,20 @@
+h1, h2 {
+    font-family: 'Montserrat';
+    color:#2222FF;
+    border: 1cm;
+    border-color: #000000;
+    border-radius: 2cm;
+}
+
+img {
+    align-self: right;
+}
+
+p, li {
+    font-family: 'Roboto';
+    color:#009900;
+}
+
+body {
+    background: #DDDDDD;
+}
