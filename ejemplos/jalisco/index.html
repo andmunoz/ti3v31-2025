@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jalisco Nunca Pierde</title>
+    </head>
+    <body>
+        <h1>Hola, soy Jalisco</h1>
+        <p>¿Quieres jugar? Entonces piensa en un número entre 1 y 100 y luego me lo das.</p>
+        <form>
+            <input type="text" name="numero" size="2" id="numero"/>
+            <button type="button" id="enviar" onclick="jugar()">Enviar</button>
+            <button type="button" id="limpiar" onclick="reiniciar()" disabled="true">Limpiar</button>
+        </form>
+        <p id="respuesta"></p>
+        <script>
+            function jugar() {
+                document.getElementById('enviar').disabled = true;
+                var numero = document.getElementById('numero');
+                var valorJugador = parseInt(numero.value);
+                console.log(valorJugador);
+                var valorJalisco = valorJugador + 1;
+                var respuesta = document.getElementById('respuesta');
+                if (isNaN(valorJugador) || valorJugador < 1 || valorJugador > 100) {
+                    respuesta.innerHTML = "No hagas trampa, es entre 1 y 100";
+                }
+                else {
+                    respuesta.innerHTML = "Te gané con el " + valorJalisco;
+                }
+                document.getElementById('limpiar').disabled = false;
+            }
+
+            function reiniciar() {
+                document.getElementById('limpiar').disabled = true;
+                document.getElementById('numero').value = '';
+                document.getElementById('respuesta').innerHTML = '';
+                document.getElementById('enviar').disabled = false;
+            }
+        </script>
+    </body>
+</html>
