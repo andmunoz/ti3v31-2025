@@ -17,6 +17,7 @@
                 document.getElementById('enviar').disabled = true;
                 var numero = document.getElementById('numero');
                 var valorJugador = parseInt(numero.value);
+                numero.disabled = true;
                 console.log(valorJugador);
                 var valorJalisco = valorJugador + 1;
                 var respuesta = document.getElementById('respuesta');
@@ -33,6 +34,7 @@
                 document.getElementById('limpiar').disabled = true;
                 document.getElementById('numero').value = '';
                 document.getElementById('respuesta').innerHTML = '';
+                document.getElementById('numero').disabled = false;
                 document.getElementById('enviar').disabled = false;
             }
         </script>
