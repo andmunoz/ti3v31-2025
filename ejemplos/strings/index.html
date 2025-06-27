@@ -74,6 +74,30 @@
                 }
             </script>
 
+            <h2>Validador de RUTs</h2>
+            <p>Ingresa tu rut, sin puntos, con guión y dígito verificador.</p>
+            <label for="rut">RUT:</label>
+            <input type="text" name="rut" id="rut"/>
+            <button class="waves-effect waves-light btn" onclick="validar()">Validar</button>
+            <p id="validacionRUT"></p>
+            <script>
+                function validar(){
+                    let rut = document.getElementById('rut').value;
+                    let mutiplo = 2;
+                    let suma = 0;
+                    let digito;
+                    for(let i=rut.length-1; i>=0; i--) {
+                        digito = parseInt(rut.charAt(i));
+                        suma += digito * multiplo;
+                        if (multiplo == 7) {
+                            multiplo == 2;
+                        }
+                    }
+                    let modulo = suma%11;
+                    document.getElementById('validacionRUT').innerHTML = 'El telefono con formato es +56 ' + telefonoFormateado;
+                }
+            </script>
+
             <footer>
                 <h4>Creado por Andrés Muñoz O.</h4>
             </footer>
