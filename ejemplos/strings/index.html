@@ -83,18 +83,39 @@
             <script>
                 function validar(){
                     let rut = document.getElementById('rut').value;
-                    let mutiplo = 2;
+                    let numeroRut = rut.split('-')[0];
+                    console.log('Número de RUT: ' + numeroRut);
+                    let dvRut = rut.split('-')[1]
+                    console.log('Dígito verificador: ' + dvRut);
+                    let multiplo = 2;
                     let suma = 0;
                     let digito;
-                    for(let i=rut.length-1; i>=0; i--) {
-                        digito = parseInt(rut.charAt(i));
+                    for(let i=numeroRut.length-1; i>=0; i--) {
+                        digito = parseInt(numeroRut.charAt(i));
+                        console.log(digito + ' x ' + multiplo + ' = ' + digito * multiplo);
                         suma += digito * multiplo;
                         if (multiplo == 7) {
-                            multiplo == 2;
+                            multiplo = 2;
+                        }
+                        else {
+                            multiplo++;
                         }
                     }
-                    let modulo = suma%11;
-                    document.getElementById('validacionRUT').innerHTML = 'El telefono con formato es +56 ' + telefonoFormateado;
+                    console.log('Suma: ' + suma);
+                    let modulo = suma % 11;
+                    console.log('Módulo: ' + modulo);
+                    let resultado = 11 - modulo;
+                    if (resultado == 11) {
+                        resultado = 0;
+                    } else if (resultado == 10) {
+                        resultado = 'K';
+                    }
+                    console.log('Resultado: ' + resultado);
+                    if (resultado == dvRut) {
+                        document.getElementById('validacionRUT').innerHTML = 'El RUT es válido';
+                    } else {
+                        document.getElementById('validacionRUT').innerHTML = 'El RUT NO es válido';
+                    }
                 }
             </script>
 
