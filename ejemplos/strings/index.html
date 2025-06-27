@@ -1,78 +1,82 @@
 <html>
     <head>
         <title>Ejemplos de Manejo de String</title>
-    </head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        </head>
     <body>
-        <header>
-            <h1>Ejemplos de Manejo de Strings</h1>
-        </header>
+        <div class="container">
+            <header>
+                <h1>Ejemplos de Manejo de Strings</h1>
+            </header>
 
-        <h2>Separar strings sin validar</h2>
-        <p>Ingrese su nombre completo</p>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre"/>
-        <button onclick="separar()">Separar</button>
-        <p id="nombre_separado"></p>
-        <script>
-            function separar(){
-                let nombre = document.getElementById('nombre').value;
-                let nombreSeparado = nombre.split(' ');
-                console.log(nombreSeparado);
-                let nombreHTML = '<ul>';
-                nombreSeparado.forEach(elemento => {
-                    nombreHTML += '<li>' + elemento + '</li>';
-                });
-                nombreHTML += '</ul>'
-                document.getElementById('nombre_separado').innerHTML = nombreHTML
-            }
-        </script>
-
-        <h2>Calcular fórmulas (sumas)</h2>
-        <p>Ingresa una fórmula, sin espacios, con números y signos de suma.</p>
-        <label for="formula">Formula:</label>
-        <input type="text" name="formula" id="formula"/>
-        <button onclick="calcular()">Calcular</button>
-        <p id="resultado"></p>
-        <script>
-            function calcular(){
-                let formula = document.getElementById('formula').value;
-                let sumandos = formula.split('+');
-                console.log(sumandos);
-                let resultado = 0;
-                sumandos.forEach(sumando => {
-                    resultado += parseInt(sumando);
-                });
-                document.getElementById('resultado').innerHTML = 'El resultado es ' + resultado
-            }
-        </script>
-
-        <h2>Formateador de Número de Teléfono</h2>
-        <p>Ingresa tu número de teléfono, sin el +56, y sin espacios (solo el número).</p>
-        <label for="telefono">Teléfono:</label>
-        <input type="text" name="telefono" id="telefono"/>
-        <button onclick="formatear()">Formatear</button>
-        <p id="telefonoConFormato"></p>
-        <script>
-            function formatear(){
-                let telefono = document.getElementById('telefono').value;
-                let telefonoFormateado = '';
-                if (telefono.length != 9) {
-                    document.getElementById('telefonoConFormato').innerHTML = 'El número debe tener 9 dígitos ';
+            <h2>Separar strings sin validar</h2>
+            <p>Ingrese su nombre completo</p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"/>
+            <button class="waves-effect waves-light btn" onclick="separar()">Separar</button>
+            <p id="nombre_separado"></p>
+            <script>
+                function separar(){
+                    let nombre = document.getElementById('nombre').value;
+                    let nombreSeparado = nombre.split(' ');
+                    console.log(nombreSeparado);
+                    let nombreHTML = '<ul>';
+                    nombreSeparado.forEach(elemento => {
+                        nombreHTML += '<li>' + elemento + '</li>';
+                    });
+                    nombreHTML += '</ul>'
+                    document.getElementById('nombre_separado').innerHTML = nombreHTML
                 }
-                else {
-                    for(let i=0; i<telefono.length; i++) {
-                        telefonoFormateado += telefono.charAt(i);
-                        if (i == 0 || i == 4) {
-                            telefonoFormateado += ' ';
-                        }
+            </script>
+
+            <h2>Calcular fórmulas (sumas)</h2>
+            <p>Ingresa una fórmula, sin espacios, con números y signos de suma.</p>
+            <label for="formula">Formula:</label>
+            <input type="text" name="formula" id="formula"/>
+            <button class="waves-effect waves-light btn" onclick="calcular()">Calcular</button>
+            <p id="resultado"></p>
+            <script>
+                function calcular(){
+                    let formula = document.getElementById('formula').value;
+                    let sumandos = formula.split('+');
+                    console.log(sumandos);
+                    let resultado = 0;
+                    sumandos.forEach(sumando => {
+                        resultado += parseInt(sumando);
+                    });
+                    document.getElementById('resultado').innerHTML = 'El resultado es ' + resultado
+                }
+            </script>
+
+            <h2>Formateador de Número de Teléfono</h2>
+            <p>Ingresa tu número de teléfono, sin el +56, y sin espacios (solo el número).</p>
+            <label for="telefono">Teléfono:</label>
+            <input type="text" name="telefono" id="telefono"/>
+            <button class="waves-effect waves-light btn" onclick="formatear()">Formatear</button>
+            <p id="telefonoConFormato"></p>
+            <script>
+                function formatear(){
+                    let telefono = document.getElementById('telefono').value;
+                    let telefonoFormateado = '';
+                    if (telefono.length != 9) {
+                        document.getElementById('telefonoConFormato').innerHTML = 'El número debe tener 9 dígitos ';
                     }
-                    document.getElementById('telefonoConFormato').innerHTML = 'El telefono con formato es +56 ' + telefonoFormateado;
+                    else {
+                        for(let i=0; i<telefono.length; i++) {
+                            telefonoFormateado += telefono.charAt(i);
+                            if (i == 0 || i == 4) {
+                                telefonoFormateado += ' ';
+                            }
+                        }
+                        document.getElementById('telefonoConFormato').innerHTML = 'El telefono con formato es +56 ' + telefonoFormateado;
+                    }
                 }
-            }
-        </script>
+            </script>
 
-        <footer>
-            <h4>Creado por Andrés Muñoz O.</h4>
-        </footer>
+            <footer>
+                <h4>Creado por Andrés Muñoz O.</h4>
+            </footer>
+        </div>
     </body>
 </html>
