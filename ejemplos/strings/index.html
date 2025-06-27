@@ -22,8 +22,8 @@
                     let nombreSeparado = nombre.split(' ');
                     console.log(nombreSeparado);
                     let nombreHTML = '<ul>';
-                    nombreSeparado.forEach(elemento => {
-                        nombreHTML += '<li>' + elemento + '</li>';
+                    nombreSeparado.forEach((elemento, indice) => {
+                        nombreHTML += '<li>[' + indice + ']: ' + elemento + '</li>';
                     });
                     nombreHTML += '</ul>'
                     document.getElementById('nombre_separado').innerHTML = nombreHTML
