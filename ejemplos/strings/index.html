@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Ejemplos de Manejo de String</title>
+    </head>
+    <body>
+        <header>
+            <h1>Ejemplos de Manejo de Strings</h1>
+        </header>
+
+        <h2>Separar strings sin validad</h2>
+        <p>Ingrese su nombre completo</p>
+        <input type="text" name="nombre" id="nombre"/>
+        <button onclick="separar()">Separar</button>
+        <p id="nombre_separado"></p>
+        <script>
+            function separar(){
+                let nombre = document.getElementById('nombre').value;
+                let nombreSeparado = nombre.split(' ');
+                console.log(nombreSeparado);
+                let nombreHTML = '<ul>';
+                nombreSeparado.forEach(elemento => {
+                    nombreHTML += '<li>' + elemento + '</li>';
+                });
+                nombreHTML += '</ul>'
+                document.getElementById('nombre_separado').innerHTML = nombreHTML
+            }
+        </script>
+
+        <h2>Calcular fórmulas (sumas)</h2>
+        <p>Ingresa una fórmula, sin espacios, con números y signos de suma.</p>
+        <input type="text" name="formula" id="formula"/>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado"></p>
+        <script>
+            function calcular(){
+                let formula = document.getElementById('formula').value;
+                let sumandos = formula.split('+');
+                console.log(sumandos);
+                let resultado = 0;
+                sumandos.forEach(sumando => {
+                    resultado += parseInt(sumando);
+                });
+                document.getElementById('resultado').innerHTML = 'El resultado es ' + resultado
+            }
+        </script>
+
+        <h2>Calcular fórmulas (sumas)</h2>
+        <p>Ingresa una fórmula, sin espacios, con números y signos de suma.</p>
+        <input type="text" name="formula" id="formula"/>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado"></p>
+        <script>
+            function calcular(){
+                let formula = document.getElementById('formula').value;
+                let sumandos = formula.split('+');
+                console.log(sumandos);
+                let resultado = 0;
+                sumandos.forEach(sumando => {
+                    resultado += parseInt(sumando);
+                });
+                document.getElementById('resultado').innerHTML = 'El resultado es ' + resultado
+            }
+        </script>
+
+        <h2>Formateador de Número de Teléfono</h2>
+        <p>Ingresa tu número de teléfono, sin el +56, y sin espacios (solo el número).</p>
+        <input type="text" name="telefono" id="telefono"/>
+        <button onclick="formatear()">Formatear</button>
+        <p id="telefonoConFormato"></p>
+        <script>
+            function formatear(){
+                let telefono = document.getElementById('telefono').value;
+                let telefonoFormateado = '';
+                if (telefono.length != 9) {
+                    document.getElementById('telefonoConFormato').innerHTML = 'El número debe tener 9 dígitos ';
+                }
+                else {
+                    for(let i=0; i<telefono.length; i++) {
+                        telefonoFormateado += telefono.charAt(i);
+                        if (i == 0 || i == 4) {
+                            telefonoFormateado += ' ';
+                        }
+                    }
+                    document.getElementById('telefonoConFormato').innerHTML = 'El telefono con formato es +56 ' + telefonoFormateado;
+                }
+            }
+        </script>
+
+        <footer>
+            <h4>Creado por Andrés Muñoz O.</h4>
+        </footer>
+    </body>
+</html>
