@@ -1,11 +1,13 @@
+/* Se incorpota TailwindCSS a la plantilla */
 @import "tailwindcss";
 
+/* Se importan las familias de componentes de Tailwind a utilizar */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Se define el CSS que se quiere utilizar en particular */
 body {
-  font-family: 'Open Sans', sans-serif;
   line-height: 1.5rem;
 }
 

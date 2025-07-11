@@ -1,8 +1,10 @@
-export default function ClienteCard({ nombre, apellido, correo, telefono, totalVentas, ventas }) {
+// Se define la componente con todos los datos que debe mostrar
+export default function ClienteCard(
+  { nombre, apellido, correo, telefono, totalVentas, ventas }) {
   return (
     <div className="bg-white shadow-md rounded-lg p-6">
       <h2 className="text-xl font-semibold text-gray-800">{nombre} {apellido}</h2>
-      <p className="text-sm text-gray-600">{correo}</p>
+      <p className="text-sm text-gray-600"><a href="mailto:{correo}">{correo}</a></p>
       <p className="text-sm text-gray-600">{telefono}</p>
       <p className="mt-4 font-medium text-indigo-600">
         Total de ventas: ${totalVentas.toLocaleString()}
