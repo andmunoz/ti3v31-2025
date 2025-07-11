@@ -55,11 +55,14 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">Resumen de Ventas por Cliente</h1>
+      <header>
+        <h1 className="text-3xl font-bold mb-6 text-center">Resumen de Ventas por Cliente</h1>
+      </header>
+      <hr className="border-red-500"/>
       {cargando ? (
         <p className="text-center text-gray-500">Cargando datos...</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {clientes.map(cliente => {
             const { ventas, total } = obtenerVentasPorCliente(cliente.id_cliente);
             return (
@@ -76,6 +79,11 @@ export default function Home() {
           })}
         </div>
       )}
+      <hr className="border-red-500"/>
+      <footer>
+        <p>Creado por: <a href="mailto:andres.munoz27@inacapmail.cl">Profe Andrés</a></p>
+      </footer>
+
     </main>
   );
 }
